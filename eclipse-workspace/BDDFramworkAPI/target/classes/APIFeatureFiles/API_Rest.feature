@@ -5,7 +5,7 @@ Feature: JSONPlaceholder API
   So that I can test the functionality of the API
 
 
-
+@tagapi 
 Scenario: Creat User
     Given Build the request "createuser"
     When The resquest type is "POST"

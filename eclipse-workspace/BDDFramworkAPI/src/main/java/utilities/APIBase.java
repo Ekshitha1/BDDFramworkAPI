@@ -27,8 +27,8 @@ public class APIBase {
    JsonObject header;
    JsonObject Payload;
    JsonPrimitive url;
-   String keyName;
-   String keyValue;
+   String keyName,keyName1;
+   String keyValue,keyValue1;
    Response response;
    
    RequestSpecification request;
@@ -42,6 +42,9 @@ public class APIBase {
 			header= (JsonObject)master.get("headers");
 			url= (JsonPrimitive)master.get("Url").getAsJsonPrimitive();
 			Payload= (JsonObject)master.get("payload");
+			//Modify payload data
+			Payload.addProperty("name", "Leanne Graham");
+			
 			setPayload(Payload);
 			RestAssured.baseURI = url.toString().trim().replace("\"", "");
 	        RequestSpecification request = RestAssured.given();	
@@ -52,7 +55,7 @@ public class APIBase {
 					request.header(keyName,keyValue);
 				}
 				setRequest(request);
-				
+		    
 			}
 			
 		} catch (JsonIOException e) {

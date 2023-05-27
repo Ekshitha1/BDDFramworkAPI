@@ -8,7 +8,7 @@
    "payload" :
    {
     "id": 11,
-    "name": "Leanne Graham",
+    "name": "$name",
     "username": "Bret",
     "email": "Sincere@april.biz",
     "address": {
